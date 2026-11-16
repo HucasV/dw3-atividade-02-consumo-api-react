@@ -26,17 +26,6 @@ const ELEMENTS = [
   "Imaginário"
 ];
 
-const PATHS = [
-  "Todos",
-  "Destruição",
-  "Caça",
-  "Erudição",
-  "Harmonia",
-  "Nihilidade",
-  "Preservação",
-  "Abundância",
-  "A Memória"
-];
 
 // =========================================================
 // CARD DE PERSONAGEM
@@ -96,7 +85,19 @@ export default function Catalog() {
   const [element, setElement] = useState("Todos");
   const [path, setPath] = useState("Todos");
   const [rarity, setRarity] = useState("Todas");
+// Caminhos encontrados nos personagens carregados
+const availablePaths = useMemo(() => {
+  const paths = characters
+    .map((character) => character.path?.name)
+    .filter(Boolean);
 
+  return [...new Set(paths)].sort((a, b) =>
+    a.localeCompare(b, "pt-BR")
+  );
+}, [characters]);
+
+
+  
   // =======================================================
   // BUSCA DOS PERSONAGENS NA API
   // =======================================================
@@ -156,8 +157,8 @@ export default function Catalog() {
         character.element.name === element;
 
       const matchesPath =
-        path === "Todos" ||
-        character.path.name === path;
+  path === "Todos" ||
+  character.path?.name === path;
 
       const matchesRarity =
         rarity === "Todas" ||
@@ -296,13 +297,14 @@ export default function Catalog() {
               }
               aria-label="Filtrar por Caminho"
             >
-              {PATHS.map((item) => (
-                <option key={item} value={item}>
-                  {item === "Todos"
-                    ? "Todos os Caminhos"
-                    : item}
-                </option>
-              ))}
+              <option value="Todos">Todos</option>
+
+{availablePaths.map((pathName) => (
+  <option key={pathName} value={pathName}>
+    {pathName}
+  </option>
+))}
+
             </select>
 
             <select

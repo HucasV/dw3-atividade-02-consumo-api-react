@@ -637,3 +637,599 @@ h2 { font-size: clamp(29px,3.5vw,42px); letter-spacing: -.045em; margin: 0; }
   }
 
 }
+
+/* =========================================
+   NAVEGAÇÃO DA FICHA
+========================================= */
+
+.character-detail-nav {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  padding: 22px;
+  border-bottom: 1px solid rgba(215, 183, 119, 0.16);
+}
+
+.character-detail-nav a {
+  color: #aaa9b4;
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.character-detail-nav a:hover {
+  color: #e6c88e;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.character-stat-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.character-stat-heading > span {
+  color: #d6bd8d;
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+}
+
+.character-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.character-stat-card {
+  min-width: 0;
+  padding: 15px 12px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(215, 183, 119, 0.18);
+  border-radius: 8px;
+}
+
+.character-stat-card span {
+  display: block;
+  margin-bottom: 9px;
+  color: #aaa9b4;
+  font-family: "DM Mono", monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.1em;
+}
+
+.character-stat-card strong {
+  color: #f1e6ce;
+  font-size: 1.2rem;
+  overflow-wrap: anywhere;
+}
+
+.character-stat-note {
+  margin-top: 10px;
+  color: #898995;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.character-description-block {
+  margin-top: 28px;
+}
+
+.character-description-block .detail-description {
+  line-height: 1.85;
+}
+
+/* =========================================
+   SEÇÕES DA FICHA
+========================================= */
+
+.character-detail-section {
+  scroll-margin-top: 24px;
+  margin-top: 75px;
+}
+
+/* =========================================
+   BUILD RECOMENDADA
+========================================= */
+
+.character-build-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 28px;
+}
+
+.character-build-card {
+  padding: 23px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(215, 183, 119, 0.17);
+  border-radius: 9px;
+}
+
+.character-build-card > span {
+  display: block;
+  margin-bottom: 13px;
+  color: #d2b47e;
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+}
+
+.character-build-card h3 {
+  color: #f1e6ce;
+  font-size: 1.05rem;
+}
+
+.character-build-card p {
+  color: #c4c1c9;
+  line-height: 1.7;
+}
+
+.character-build-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 210px;
+  margin-top: 28px;
+  padding: 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px dashed rgba(215, 183, 119, 0.28);
+  border-radius: 10px;
+}
+
+.build-symbol {
+  margin-bottom: 15px;
+  color: #d6bd8d;
+  font-size: 2rem;
+}
+
+.character-build-placeholder h3 {
+  margin-bottom: 10px;
+  color: #f1e6ce;
+}
+
+.character-build-placeholder p {
+  color: #aaa9b4;
+  line-height: 1.7;
+}
+
+.build-footnote {
+  margin-top: 20px;
+  color: #b99b69;
+  font-family: "DM Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+}
+
+/* =========================================
+   HABILIDADES
+========================================= */
+
+.character-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.character-skill-card {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(215, 183, 119, 0.17);
+  border-radius: 9px;
+  transition: border-color 0.2s ease;
+}
+
+.character-skill-card:hover {
+  border-color: rgba(215, 183, 119, 0.55);
+}
+
+.character-skill-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.character-skill-heading img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.character-skill-heading span {
+  color: #c4a977;
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+.character-skill-heading h3 {
+  margin-top: 6px;
+  color: #f1e6ce;
+  font-size: 1.05rem;
+}
+
+.character-skill-card > p {
+  color: #c4c1c9;
+  font-size: 0.88rem;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.skill-level-note {
+  display: block;
+  margin-top: 18px;
+  color: #b99b69;
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+}
+
+/* =========================================
+   EIDOLONS
+========================================= */
+
+.character-eidolon-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.character-eidolon-card {
+  display: grid;
+  grid-template-columns: 55px 76px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(215, 183, 119, 0.17);
+  border-radius: 9px;
+}
+
+.character-eidolon-rank {
+  color: #d6bd8d;
+  font-family: "DM Mono", monospace;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.character-eidolon-card img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+}
+
+.character-eidolon-info h3 {
+  margin-bottom: 9px;
+  color: #f1e6ce;
+}
+
+.character-eidolon-info p {
+  color: #c4c1c9;
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 800px) {
+  .character-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .character-skills-grid,
+  .character-build-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .character-detail-nav {
+    gap: 17px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 520px) {
+  .character-detail-nav {
+    justify-content: space-around;
+    gap: 12px;
+    padding: 18px 10px;
+  }
+
+  .character-detail-nav a {
+    font-size: 0.6rem;
+  }
+
+  .character-eidolon-card {
+    grid-template-columns: 38px 55px minmax(0, 1fr);
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .character-eidolon-card img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .character-eidolon-rank {
+    font-size: 1rem;
+  }
+
+  .character-eidolon-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .character-eidolon-info p {
+    font-size: 0.8rem;
+  }
+}
+
+.character-eidolon-card {
+  grid-template-columns: 55px 110px minmax(0, 1fr);
+}
+
+.character-eidolon-card img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+}
+
+
+/* =================================
+   SIGNATURE LIGHT CONE
+================================= */
+
+.signature-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.signature-main-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 340px) 1fr;
+  gap: 28px;
+  padding: 26px;
+  border: 1px solid rgba(190, 170, 255, 0.2);
+  border-radius: 18px;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(139, 105, 210, 0.16),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #171522, #101019);
+  overflow: hidden;
+}
+
+.signature-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.signature-art img {
+  width: 100%;
+  height: 100%;
+  max-height: 440px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.signature-art img:hover {
+  transform: scale(1.04);
+}
+
+.signature-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.signature-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #b9a9e8;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.signature-stars {
+  color: #e9bd69;
+  letter-spacing: 3px;
+}
+
+.signature-info h3 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  line-height: 1.15;
+}
+
+.signature-level {
+  color: #858394;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+.signature-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.signature-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 17px 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.035);
+}
+
+.signature-stat span {
+  color: #aaa5b8;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+.signature-stat strong {
+  font-size: 1.35rem;
+  color: #eeeaf8;
+}
+
+/* PASSIVA */
+
+.signature-effect-card {
+  padding: 26px;
+  border: 1px solid rgba(190, 170, 255, 0.17);
+  border-radius: 16px;
+  background: linear-gradient(
+    145deg,
+    rgba(35, 29, 51, 0.95),
+    rgba(17, 17, 26, 0.98)
+  );
+}
+
+.signature-effect-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.signature-effect-heading h3 {
+  margin: 8px 0 0;
+  font-size: 1.35rem;
+}
+
+.signature-effect-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(169, 140, 240, 0.12);
+  color: #c4a9ff;
+  font-size: 1.3rem;
+}
+
+/* SUPERIMPOSIÇÃO */
+
+.superimposition-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.09);
+}
+
+.superimposition-selector > span {
+  color: #aaa5b8;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+.superimposition-options {
+  display: flex;
+  gap: 8px;
+}
+
+.superimposition-button {
+  min-width: 43px;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  color: #aaa5b8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.superimposition-button:hover {
+  border-color: #a98cf0;
+  color: white;
+}
+
+.superimposition-button.active {
+  border-color: #b59af5;
+  background: rgba(169, 140, 240, 0.2);
+  color: #e1d4ff;
+  box-shadow: 0 0 16px rgba(169, 140, 240, 0.12);
+}
+
+.signature-description {
+  margin-top: 24px;
+  color: #c5c1d1;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+  .signature-main-card {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .signature-art {
+    min-height: 250px;
+  }
+
+  .signature-art img {
+    max-height: 320px;
+  }
+
+  .signature-stats {
+    gap: 7px;
+  }
+
+  .signature-stat {
+    padding: 12px 8px;
+  }
+
+  .signature-stat strong {
+    font-size: 1.1rem;
+  }
+
+  .signature-effect-card {
+    padding: 18px;
+  }
+
+  .superimposition-selector {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .superimposition-options {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
